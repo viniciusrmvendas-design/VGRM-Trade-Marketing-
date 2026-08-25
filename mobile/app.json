@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "name": "VGRM Trade Marketing",
+    "slug": "vgrm-trade-marketing",
+    "scheme": "vgrmtrade",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "backgroundColor": "#0f172a"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Precisamos da sua localização para confirmar que você está na loja no check-in e no check-out.",
+        "NSCameraUsageDescription": "Precisamos da câmera para registrar as fotos de antes e depois da visita.",
+        "NSPhotoLibraryUsageDescription": "Usado apenas se você optar por escolher uma foto já existente."
+      }
+    },
+    "android": {
+      "package": "br.com.vgrm.trademarketing",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "CAMERA"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Precisamos da sua localização para confirmar que você está na loja no check-in e no check-out."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Precisamos da câmera para registrar as fotos de antes e depois da visita."
+        }
+      ]
+    ]
+  }
+}

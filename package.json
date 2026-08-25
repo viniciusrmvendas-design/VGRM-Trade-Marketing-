@@ -1,0 +1,17 @@
+{
+  "name": "vgrm-trade-marketing",
+  "private": true,
+  "version": "0.1.0",
+  "description": "App de rotas, visitas e trade marketing da VGRM",
+  "workspaces": [
+    "packages/*",
+    "web",
+    "mobile"
+  ],
+  "scripts": {
+    "web:dev": "npm run dev -w web",
+    "web:build": "npm run build -w web",
+    "mobile:start": "npm run start -w mobile",
+    "shared:build": "npm run build -w @vgrm/shared"
+  }
+}
