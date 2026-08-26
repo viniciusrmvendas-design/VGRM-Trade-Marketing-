@@ -4,6 +4,8 @@ import type { Profile, Store, Visit } from "@vgrm/shared";
 import { StatusBadge } from "@/components/status-badge";
 import { ExportCsvButton } from "@/components/export-csv-button";
 
+export const dynamic = "force-dynamic";
+
 type VisitRow = Visit & { store: Store; assigned: Profile };
 
 export default async function VisitasPage({

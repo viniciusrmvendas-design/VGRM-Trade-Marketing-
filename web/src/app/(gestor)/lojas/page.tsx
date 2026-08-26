@@ -2,6 +2,8 @@ import { createClient } from "@/lib/supabase/server";
 import type { Company, Store } from "@vgrm/shared";
 import { NewStoreForm } from "./new-store-form";
 
+export const dynamic = "force-dynamic";
+
 export default async function LojasPage() {
   const supabase = createClient();
 

@@ -3,6 +3,8 @@ import type { Profile, Store } from "@vgrm/shared";
 import { NewRouteForm } from "./new-route-form";
 import { RoutesList } from "./routes-list";
 
+export const dynamic = "force-dynamic";
+
 export default async function RotasPage() {
   const supabase = createClient();
 
