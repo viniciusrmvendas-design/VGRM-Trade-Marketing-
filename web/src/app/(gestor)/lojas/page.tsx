@@ -7,14 +7,7 @@ export const dynamic = "force-dynamic";
 export default async function LojasPage() {
   const supabase = createClient();
 
-  const {
-    data: { user: debugUser },
-  } = await supabase.auth.getUser();
-
-  const [
-    { data: stores, error: storesError },
-    { data: companies, error: companiesError },
-  ] = await Promise.all([
+  const [{ data: stores }, { data: companies }] = await Promise.all([
     supabase
       .from("stores")
       .select("*")
@@ -29,12 +22,6 @@ export default async function LojasPage() {
   return (
     <div>
       <h1 className="text-xl font-semibold">Lojas</h1>
-
-      <pre className="mt-2 whitespace-pre-wrap rounded bg-slate-900 p-3 text-xs text-emerald-300">
-        DEBUG uid: {debugUser?.id ?? "sem sessão"}
-        {"\n"}stores count: {stores?.length ?? "null"} | error: {storesError?.message ?? "nenhum"}
-        {"\n"}companies count: {companies?.length ?? "null"} | error: {companiesError?.message ?? "nenhum"}
-      </pre>
 
       <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_360px]">
         <div className="overflow-x-auto rounded-lg bg-white shadow-sm">
