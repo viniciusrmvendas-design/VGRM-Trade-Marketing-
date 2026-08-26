@@ -115,6 +115,18 @@ Abra no Expo Go (para testar rápido) ou gere um build de desenvolvimento
 (`npx expo run:android` / `npx expo run:ios`) para usar câmera/GPS sem
 limitações do Expo Go.
 
+#### Gerar um instalador (.apk) para Android, sem precisar do Expo Go
+
+```bash
+npx eas-cli login          # entra com sua conta expo.dev (gratuita)
+npx eas-cli build -p android --profile preview
+```
+
+Isso sobe o projeto pra nuvem da Expo, compila lá (leva ~10-20 min) e no
+final mostra um link de download do `.apk` — baixe direto no celular
+Android e instale (pode precisar permitir "instalar de fontes
+desconhecidas" nas configurações do Android).
+
 ## Extração de dados para o cliente
 
 - O portal do cliente (`/portal`) tem um botão **Exportar CSV** por período,
