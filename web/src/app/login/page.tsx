@@ -25,7 +25,7 @@ export default function LoginPage() {
     setLoading(false);
 
     if (error) {
-      setError("E-mail ou senha inválidos.");
+      setError(`E-mail ou senha inválidos. (detalhe técnico: ${error.message})`);
       return;
     }
 
